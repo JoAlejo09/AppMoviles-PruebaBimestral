@@ -5,7 +5,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  {
+    path: 'nuevo-recibo',
+    loadChildren: () => import('./nuevo-recibo/nuevo-recibo.module').then( m => m.NuevoReciboPageModule)
+  },
 ];
 @NgModule({
   imports: [

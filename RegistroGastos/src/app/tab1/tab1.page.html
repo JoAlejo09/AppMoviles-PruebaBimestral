@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content class="ion-padding">
+  <ion-card color="primary">
+    <p color="white">Total Gastado</p>
+    <p color="white">${{totalGasto}}
+    </p>
+  </ion-card>
+  <h3>Dinero Gastado</h3>
+  <ion-list *ngIf="recibos.length > 0">
+        <ion-item *ngFor="let recibo of recibos">
+          <ion-label>
+            <h5>Descripcion: {{recibo.descripcion}}</h5>
+            <p>Pagado por: {{recibo.persona}}</p>
+            <p>Valor : {{recibo.monto}}</p>
+            <p *ngIf="recibo.foto">Recibo validado</p>
+            <p *ngIf="!recibo.foto">Recibo no validado</p>
+          </ion-label>
+        </ion-item>
+  </ion-list>
+  <ion-tab-button [routerLink]="['/nuevo-recibo']">
+    <ion-icon name="save"></ion-icon>
+    <ion-label>NuevoRecibo</ion-label>
+  </ion-tab-button>
 </ion-content>

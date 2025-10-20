@@ -1,0 +1,27 @@
+<ion-content class="ion-padding">
+  <form (ngSubmit)="guardarGasto()">
+  <ion-item>
+      <ion-label position="stacked">Descripcion:</ion-label>
+      <ion-input [(ngModel)]="descripcion" name="descripcion" required placeholder="Ej: Cena con amigos"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>Persona: </ion-label>
+  <ion-select [(ngModel)]="persona" name="persona" placeholder="Selecciona una persona" required>
+    <ion-select-option *ngFor="let persona of personas" [value]="persona">
+      {{ persona }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+
+  <ion-item>
+      <ion-label position="stacked">Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="monto" name="monto" required placeholder="Ej: $25.00"></ion-input>
+  </ion-item>
+ <ion-button expand="block" type="button" (click)="tomarFoto()">Subir Foto del Recibo</ion-button>
+<ion-button expand="block" type="submit" color="success" style="margin-top: 20px;">
+    Guardar Recibo
+  </ion-button>
+</form>
+</ion-content>
+
+
