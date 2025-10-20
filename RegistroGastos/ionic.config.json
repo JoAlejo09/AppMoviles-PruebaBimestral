@@ -1,0 +1,7 @@
+{
+  "name": "RegistroGastos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
